@@ -38,3 +38,8 @@ Site estático (HTML/CSS/JS puro) + uma rota `/api/seguidores` para o contador a
 - Prévia com `noindex` e `robots.txt` bloqueando; liberar ao publicar.
 - Hospedagem precisa suportar a função `api/seguidores.mjs` (ex.: Vercel); sem ela o site cai para `dados/metricas.json`.
 - Confirmar relação MUDAH × MOOTS.
+
+## Mobile (camada final)
+- `assets/css/mobile.css` carrega depois do `style.css`: refinamento ≤ 640px, barra fixa (`#dock`) e a barra/selo de "nível de performance" (desktop + mobile).
+- Testes em `tests/mobile.test.js` (320/360/390/430px: sem vazamento lateral, toque ≥ 44px, texto ≥ 11px, carrosséis, barra fixa, autoplay do fundo, player).
+- `npm test` roda com `--test-concurrency=2` para não estourar tempo em máquinas lentas.

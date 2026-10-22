@@ -21,3 +21,11 @@ for (const base of bases) {
 if (!modulo?.chromium) throw new Error("Playwright não encontrado. Rode: npm run deps");
 
 export const { chromium } = modulo;
+
+// Caminho do axe-core (auditoria de acessibilidade), resolvido do mesmo jeito que o Playwright
+export function caminhoAxe() {
+  for (const base of bases) {
+    try { return createRequire(base).resolve("axe-core/axe.min.js"); } catch { /* próxima base */ }
+  }
+  throw new Error("axe-core não encontrado. Rode: npm run deps");
+}

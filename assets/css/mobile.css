@@ -1,0 +1,154 @@
+/* =====================================================================
+   Camada final: vibe performática (desktop + mobile) e refinamento mobile.
+   Mesma estética: cinzas, tinta, azul GVST, cartões arredondados.
+   ===================================================================== */
+
+/* barra "nível de performance" que enche com a rolagem */
+.performance-barra { position: fixed; top: 0; left: 0; right: 0; height: 4px; z-index: 70; background: transparent; pointer-events: none; }
+.performance-barra span { display: block; height: 100%; width: 100%; transform-origin: 0 50%; transform: scaleX(var(--p, 0)); background: linear-gradient(90deg, var(--azul), #6F8AD6, var(--vivo)); }
+.performance-selo {
+  position: fixed; top: 74px; right: 16px; z-index: 70; pointer-events: none;
+  display: inline-flex; align-items: center; gap: 8px; padding: 7px 12px 7px 8px; border-radius: 999px;
+  background: var(--tinta); color: var(--papel); font-weight: 800; font-size: 12px; text-transform: uppercase; letter-spacing: .04em;
+  box-shadow: 0 10px 24px rgba(21, 21, 21, .25); opacity: 0; transform: translateY(-8px) rotate(-3deg); transition: opacity .3s, transform .3s;
+}
+.performance-selo.is-visivel { opacity: 1; transform: rotate(-3deg); }
+.performance-selo b { background: var(--azul); color: var(--tinta); padding: 2px 8px; border-radius: 999px; font-variant-numeric: tabular-nums; min-width: 46px; text-align: center; }
+.performance-selo.is-max b { background: var(--vivo); color: var(--papel); }
+
+.fonte-kit { font-size: 11px; }
+.dock { display: none; }
+
+@media (max-width: 640px) {
+  :root { --sec: 64px; }
+  .cabeca { margin-bottom: 28px; gap: 16px; }
+  .titulo { font-size: clamp(32px, 10vw, 44px); }
+  .performance-selo { top: auto; bottom: calc(76px + env(safe-area-inset-bottom, 0px)); right: 12px; }
+
+  /* toque confortável: links e botões com pelo menos 44px */
+  .redes a, .topo .marca { min-width: 44px; min-height: 44px; display: inline-flex; align-items: center; justify-content: center; }
+  .video__link, .plat__fonte, .cupom__acoes a, .plat__links a { display: inline-flex; align-items: center; min-height: 44px; }
+  .video__links { gap: 0 16px; margin-top: 0; }
+
+  /* topo */
+  .hero__palco { padding-top: 20px; }
+  .hero__titulo { font-size: clamp(44px, 14.5vw, 64px); }
+  .hero__figura { padding: 34px 0 30px; min-height: 0; }
+  .hero__lede { font-size: 19px; }
+  .hero__ctas { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .hero__ctas .btn { padding: 0 12px; }
+  .faixa__item { padding: 16px 0 18px; }
+  .faixa__num { font-size: 22px; }
+  .ticker { padding: 12px 0; }
+  .ticker__trilho span { font-size: 22px; gap: 18px; padding-right: 18px; }
+
+  /* links: botão da rede ao lado do nome, sem sobrepor */
+  .redes-grandes { gap: 12px; }
+  .rede-card { grid-template-columns: auto minmax(0, 1fr) auto; padding: 18px; border-radius: 20px; }
+  .rede-card__cta { position: static; grid-column: 3; grid-row: 1 / span 2; align-self: center; }
+  .rede-card__nome { font-size: 17px; }
+  .rede-card__num { margin-top: 14px; }
+  .rede-card__num span { font-size: 26px; }
+  .cupons { gap: 12px; }
+  .cupom__corpo { padding: 14px 16px; }
+  .cupom__codigo span { font-size: 24px; }
+  .mais-links { gap: 12px; }
+  .mais-links a { min-height: 170px; padding: 14px; border-radius: 18px; }
+  .ml__t { font-size: 16px; }
+  .ml__d { font-size: 12px; }
+
+  /* personagem */
+  .personagem__titulo { margin-bottom: 28px; }
+  .monte { padding: 20px; border-radius: 22px; }
+  .item { font-size: 14px; padding-right: 14px; }
+
+  /* vídeos em carrossel deslizante, com o próximo aparecendo (dica de que continua) */
+  .grade-videos, .grade-videos--4, .eventos__lista, .galeria {
+    display: grid; grid-auto-flow: column; grid-template-columns: none; gap: 12px;
+    overflow-x: auto; scroll-snap-type: x mandatory; overscroll-behavior-x: contain;
+    margin-right: calc(var(--gutter) * -1); padding-right: var(--gutter); padding-bottom: 6px; scrollbar-width: none;
+  }
+  .grade-videos, .grade-videos--4 { grid-auto-columns: 62%; }
+  .eventos__lista { grid-auto-columns: 44%; }
+  .galeria { grid-auto-columns: 70%; }
+  .grade-videos::-webkit-scrollbar, .marca__videos::-webkit-scrollbar, .eventos__lista::-webkit-scrollbar, .galeria::-webkit-scrollbar { display: none; }
+  .grade-videos > li, .eventos__lista > li, .galeria > figure { scroll-snap-align: start; }
+  .galeria figure:nth-child(2) { transform: none; }
+  .video__t { font-size: 15px; }
+
+  /* números */
+  .plat { padding: 22px; border-radius: 20px; gap: 14px; }
+  .plat__num { font-size: 52px; }
+  .soma { border-radius: 20px; }
+  .soma__num { font-size: clamp(54px, 17vw, 76px); }
+
+  /* publis: cabeçalho compacto (logo + nome lado a lado) e vídeos menores */
+  .letreiro { padding: 14px 0; }
+  .letreiro__trilho { gap: 40px; padding-right: 40px; }
+  .publi-marca { padding: 18px 0 18px 18px; gap: 16px; }
+  .marca__info { display: grid; grid-template-columns: auto minmax(0, 1fr); column-gap: 14px; align-items: center; padding-right: 18px; }
+  .marca__info .publi__logo { grid-row: 1 / span 2; margin: 0; height: 52px; max-width: 110px; }
+  .marca__info .publi__logo--icone { height: 56px; }
+  .marca__nome { font-size: 20px; }
+  .marca__cat { margin-top: 2px; font-size: 11px; }
+  .marca__desc, .marca__resumo { grid-column: 1 / -1; }
+  .marca__desc { margin-top: 12px; font-size: 14px; }
+  .marca__resumo { margin-top: 10px; justify-self: start; }
+  .marca__videos { grid-auto-columns: 46%; margin-right: 0; padding-right: 18px; gap: 10px; }
+  .marca__videos .video__t { font-size: 14px; }
+  .marca__videos .video__meta { font-size: 12px; }
+
+  /* audiência: mapa centralizado e inteiro */
+  .mapa { max-width: 300px; margin: 20px auto 0; }
+  .mapa figcaption { right: 0; bottom: 8%; }
+
+  /* sobre */
+  .sobre__foto { max-width: 320px; margin: 0 auto; }
+  .galeria figcaption { font-size: 15px; }
+
+  /* contato e espaço para a barra fixa */
+  .contato__titulo { font-size: clamp(38px, 11vw, 52px); }
+  .rodape { padding-bottom: 84px; }
+
+  /* barra fixa: redes + proposta sempre à mão */
+  .dock {
+    position: fixed; left: 12px; right: 12px; bottom: calc(12px + env(safe-area-inset-bottom, 0px)); z-index: 60;
+    display: flex; align-items: center; gap: 6px; padding: 6px; border-radius: 999px;
+    background: rgba(21, 21, 21, .92); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px);
+    box-shadow: 0 14px 30px rgba(21, 21, 21, .3); transform: translateY(150%); transition: transform .35s cubic-bezier(.2, .8, .2, 1);
+  }
+  .dock.is-visivel { transform: none; }
+  .dock a { display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 50%; color: var(--papel); }
+  .dock a .ico { width: 21px; height: 21px; }
+  .dock .dock__cta { flex: 1; width: auto; border-radius: 999px; background: var(--azul); color: var(--tinta); font-weight: 800; font-size: 14px; text-transform: uppercase; letter-spacing: .03em; text-decoration: none; }
+}
+
+@media (max-width: 360px) {
+  .hero__ctas { grid-template-columns: minmax(0, 1fr); }
+  .marca__videos { grid-auto-columns: 58%; }
+  .grade-videos, .grade-videos--4 { grid-auto-columns: 72%; }
+  .rede-card__cta { padding: 7px 10px; font-size: 12px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .performance-selo, .dock { transition: none; }
+}
+
+/* correções apontadas pelos testes de toque e de largura */
+@media (max-width: 640px) {
+  .menu-btn { width: 44px; }
+  .contato__email, .contato__alt a, .rodape a { display: inline-flex; align-items: center; min-height: 44px; }
+  .contato__alt { margin-top: 4px; }
+  .monte__t { font-size: clamp(18px, 6.4vw, 24px); max-width: 100%; overflow-wrap: anywhere; }
+}
+@media (max-width: 640px) {
+  .menu-btn { flex: none; }
+  .topo__inner { gap: 8px; }
+  .redes { gap: 0; }
+}
+@media (max-width: 640px) {
+  /* palavras inteiras: nada de quebrar "PERFORMÔMETRO" no meio */
+  .monte__t { font-size: clamp(17px, 5.6vw, 24px); overflow-wrap: normal; white-space: nowrap; }
+  .hero__ctas .btn, .cupom__copiar, .dock__cta, .rede-card__cta { white-space: nowrap; }
+  .hero__ctas .btn { font-size: 13px; letter-spacing: .01em; }
+}

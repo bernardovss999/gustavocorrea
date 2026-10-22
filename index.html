@@ -30,6 +30,7 @@
   <link rel="preload" as="image" href="assets/img/gustavo-recorte.webp" type="image/webp">
   <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Instrument+Serif:ital@1&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/mobile.css">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -138,10 +139,10 @@
         <div class="hero__texto-col">
           <h1 class="hero__titulo">
             <span class="hero__l1">Gustavo</span>
-            <span class="hero__l2">Correa</span>
+            <span class="hero__l2">Correa<span class="estrela" aria-hidden="true">✦</span></span>
           </h1>
           <div class="hero__texto">
-            <p class="hero__lede">O homem <em class="performatico">performático</em> que o feed reconhece em dois segundos. Humor, lifestyle, wellness e moda.</p>
+            <p class="hero__lede">O homem <em class="performatico">performático<svg class="rabisco" viewBox="0 0 200 20" preserveAspectRatio="none" aria-hidden="true"><path d="M3 14 C 40 4, 80 18, 120 9 S 185 6, 197 12"/></svg></em> que o feed reconhece em dois segundos. Humor, lifestyle, wellness e moda.</p>
             <div class="hero__ctas">
               <a class="btn btn--ink" href="#contato">Enviar proposta</a>
               <a class="btn btn--line" href="#links">Ver links</a>
@@ -149,8 +150,41 @@
           </div>
         </div>
         <figure class="hero__figura">
-          <span class="hero__gvst" aria-hidden="true">GVST</span>
-          <img src="assets/img/gustavo-recorte.webp" width="469" height="1300" fetchpriority="high" alt="Gustavo Correa de óculos escuros, camiseta branca e calça preta, com as mãos na cintura">
+          <!-- vitrine: vídeos do Gustavo rodando no fundo, todos em autoplay -->
+          <div class="vitrine" aria-hidden="true">
+            <div class="vitrine__col">
+              <video class="tile" muted loop playsinline autoplay preload="none" poster="assets/video/fundo-intervalo.webp"><source data-src="assets/video/fundo-intervalo.mp4" type="video/mp4"><source data-src="assets/video/fundo-intervalo.webm" type="video/webm"></video>
+              <video class="tile" muted loop playsinline autoplay preload="none" poster="assets/video/fundo-encontro.webp"><source data-src="assets/video/fundo-encontro.mp4" type="video/mp4"><source data-src="assets/video/fundo-encontro.webm" type="video/webm"></video>
+              <video class="tile" muted loop playsinline autoplay preload="none" poster="assets/video/fundo-arte.webp"><source data-src="assets/video/fundo-arte.mp4" type="video/mp4"><source data-src="assets/video/fundo-arte.webm" type="video/webm"></video>
+              <video class="tile" muted loop playsinline autoplay preload="none" poster="assets/video/fundo-carona.webp"><source data-src="assets/video/fundo-carona.mp4" type="video/mp4"><source data-src="assets/video/fundo-carona.webm" type="video/webm"></video>
+            </div>
+            <div class="vitrine__col vitrine__col--desce">
+              <video class="tile" muted loop playsinline autoplay preload="none" poster="assets/video/fundo-tranquilo.webp"><source data-src="assets/video/fundo-tranquilo.mp4" type="video/mp4"><source data-src="assets/video/fundo-tranquilo.webm" type="video/webm"></video>
+              <video class="tile" muted loop playsinline autoplay preload="none" poster="assets/video/fundo-paparazzi.webp"><source data-src="assets/video/fundo-paparazzi.mp4" type="video/mp4"><source data-src="assets/video/fundo-paparazzi.webm" type="video/webm"></video>
+              <video class="tile" muted loop playsinline autoplay preload="none" poster="assets/video/fundo-vintage.webp"><source data-src="assets/video/fundo-vintage.mp4" type="video/mp4"><source data-src="assets/video/fundo-vintage.webm" type="video/webm"></video>
+              <video class="tile" muted loop playsinline autoplay preload="none" poster="assets/video/fundo-metro.webp"><source data-src="assets/video/fundo-metro.mp4" type="video/mp4"><source data-src="assets/video/fundo-metro.webm" type="video/webm"></video>
+            </div>
+            <div class="vitrine__col vitrine__col--lenta">
+              <video class="tile" muted loop playsinline autoplay preload="none" poster="assets/video/fundo-lar.webp"><source data-src="assets/video/fundo-lar.mp4" type="video/mp4"><source data-src="assets/video/fundo-lar.webm" type="video/webm"></video>
+              <video class="tile" muted loop playsinline autoplay preload="none" poster="assets/video/fundo-libertinagem.webp"><source data-src="assets/video/fundo-libertinagem.mp4" type="video/mp4"><source data-src="assets/video/fundo-libertinagem.webm" type="video/webm"></video>
+              <video class="tile" muted loop playsinline autoplay preload="none" poster="assets/video/fundo-intervalo.webp"><source data-src="assets/video/fundo-intervalo.mp4" type="video/mp4"><source data-src="assets/video/fundo-intervalo.webm" type="video/webm"></video>
+              <video class="tile" muted loop playsinline autoplay preload="none" poster="assets/video/fundo-encontro.webp"><source data-src="assets/video/fundo-encontro.mp4" type="video/mp4"><source data-src="assets/video/fundo-encontro.webm" type="video/webm"></video>
+            </div>
+          </div>
+          <div class="retrato" id="retrato">
+            <div class="retrato__moldura">
+              <span class="retrato__brilho" aria-hidden="true"></span>
+              <img class="hero__rosto" src="assets/img/gustavo-rosto.webp" width="900" height="1179" fetchpriority="high" alt="Retrato de Gustavo Correa com óculos esportivos apoiados na testa">
+            </div>
+            <svg class="selo" viewBox="0 0 120 120" aria-hidden="true">
+              <defs><path id="selo-circulo" d="M60,60 m-44,0 a44,44 0 1,1 88,0 a44,44 0 1,1 -88,0"/></defs>
+              <circle cx="60" cy="60" r="58" class="selo__fundo"/>
+              <text class="selo__texto"><textPath href="#selo-circulo">GVST ✦ HOMEM PERFORMÁTICO ✦ RJ ✦</textPath></text>
+              <text class="selo__centro" x="60" y="67" text-anchor="middle">GVST</text>
+            </svg>
+          </div>
+          <p class="sticker sticker--pov" aria-hidden="true">Pov: homem performático</p>
+          <p class="sticker sticker--conceito" aria-hidden="true">Achei conceito ✌🏾</p>
         </figure>
       </div>
 
@@ -172,6 +206,13 @@
           <span class="faixa__info"><span class="rotulo"><span class="dot" aria-hidden="true"></span>Somados ao vivo</span><span class="faixa__num" data-metrica="total.seguidores">277.859</span></span>
         </a>
       </div>
+
+      <!-- ticker com os bordões dele -->
+      <div class="ticker" aria-hidden="true">
+        <div class="ticker__trilho">
+          <span>Homem performático</span><span>Achei conceito</span><span>Bem astéric</span><span>Ref Pinterest</span><span>Hora do brunch, Fer?</span><span>É sobre performar</span><span>Muito vintage</span><span>Cria é cria</span><span>Eu sou movido a arte, Bru</span>
+        </div>
+      </div>
     </section>
 
     <!-- LINKS (substitui o Linktree) -->
@@ -181,18 +222,70 @@
           <div>
             <p class="rotulo">Veio pela bio?</p>
             <h2 class="titulo" id="links-titulo">Links do Gustavo</h2>
+            <p class="sticker sticker--titulo" aria-hidden="true">toca aqui 👇🏾</p>
           </div>
         </div>
-        <ul class="botoes-links">
-          <li><a href="https://www.instagram.com/gvstavocorrea/" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-instagram"/></svg><span class="bl__t">Instagram</span><span class="bl__d">@gvstavocorrea</span></a></li>
-          <li><a href="https://www.tiktok.com/@gvstavoccorrea" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-tiktok"/></svg><span class="bl__t">TikTok</span><span class="bl__d">@gvstavoccorrea</span></a></li>
-          <li><a href="https://www.youtube.com/@gvstavocorrea" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-youtube"/></svg><span class="bl__t">Vlogs no YouTube</span><span class="bl__d">@gvstavocorrea</span></a></li>
-          <li><a href="https://www.instagram.com/gvstapparel/" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-sacola"/></svg><span class="bl__t">GVST Apparel</span><span class="bl__d">a marca de roupas dele</span></a></li>
-          <li><a href="https://zerezes.com.br/?utm_source=influenciadores&amp;utm_medium=instagram&amp;utm_campaign=ez-gvst" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-cupom"/></svg><span class="bl__t">Óculos Zerezes</span><span class="bl__d">cupom EZ-GVST</span></a></li>
-          <li><a href="https://track.influency.me/t/MTLxTdFl" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-cupom"/></svg><span class="bl__t">Bike Lev</span><span class="bl__d">cupom GVSTA</span></a></li>
-          <li><a href="https://www.instagram.com/p/DeHSPbxEU1u/" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-aviao"/></svg><span class="bl__t">Expedição Caraíva</span><span class="bl__d">viagem com a Voe Nuvy</span></a></li>
-          <li><a href="#contato"><svg class="ico" aria-hidden="true"><use href="#i-email"/></svg><span class="bl__t">Contato comercial</span><span class="bl__d">gustavo@agmoots.com</span></a></li>
-        </ul>
+        <div class="links-bio">
+          <ul class="redes-grandes">
+            <li><a class="rede-card" href="https://www.instagram.com/gvstavocorrea/" target="_blank" rel="noopener">
+              <svg class="rede-card__ico" aria-hidden="true"><use href="#i-instagram"/></svg>
+              <span class="rede-card__nome">Instagram</span>
+              <span class="rede-card__user">@gvstavocorrea</span>
+              <span class="rede-card__num"><span data-metrica="instagram.seguidores">112.789</span> seguidores</span>
+              <span class="rede-card__cta">Seguir</span>
+            </a></li>
+            <li><a class="rede-card" href="https://www.tiktok.com/@gvstavoccorrea" target="_blank" rel="noopener">
+              <svg class="rede-card__ico" aria-hidden="true"><use href="#i-tiktok"/></svg>
+              <span class="rede-card__nome">TikTok</span>
+              <span class="rede-card__user">@gvstavoccorrea</span>
+              <span class="rede-card__num"><span data-metrica="tiktok.seguidores">159.054</span> seguidores</span>
+              <span class="rede-card__cta">Seguir</span>
+            </a></li>
+            <li><a class="rede-card" href="https://www.youtube.com/@gvstavocorrea" target="_blank" rel="noopener">
+              <svg class="rede-card__ico" aria-hidden="true"><use href="#i-youtube"/></svg>
+              <span class="rede-card__nome">YouTube · vlogs</span>
+              <span class="rede-card__user">@gvstavocorrea</span>
+              <span class="rede-card__num"><span data-metrica="youtube.inscritos">6 mil</span> inscritos</span>
+              <span class="rede-card__cta">Inscrever</span>
+            </a></li>
+          </ul>
+
+          <div class="cupons">
+            <article class="cupom">
+              <div class="cupom__lado">
+                <img src="assets/img/marcas/zerezes.webp" width="247" height="200" loading="lazy" alt="Logo Zerezes">
+              </div>
+              <div class="cupom__corpo">
+                <p class="cupom__marca">Óculos Zerezes</p>
+                <p class="cupom__codigo"><span>EZ-GVST</span></p>
+                <div class="cupom__acoes">
+                  <button type="button" class="cupom__copiar" data-cupom="EZ-GVST">Copiar cupom</button>
+                  <a href="https://zerezes.com.br/?utm_source=influenciadores&amp;utm_medium=instagram&amp;utm_campaign=ez-gvst" target="_blank" rel="noopener">Ir pra loja</a>
+                </div>
+              </div>
+            </article>
+            <article class="cupom">
+              <div class="cupom__lado">
+                <img src="assets/img/marcas/lev.webp" width="191" height="64" loading="lazy" alt="Logo Lev Bicicletas">
+              </div>
+              <div class="cupom__corpo">
+                <p class="cupom__marca">Bike elétrica Lev</p>
+                <p class="cupom__codigo"><span>GVSTA</span></p>
+                <div class="cupom__acoes">
+                  <button type="button" class="cupom__copiar" data-cupom="GVSTA">Copiar cupom</button>
+                  <a href="https://track.influency.me/t/MTLxTdFl" target="_blank" rel="noopener">Ir pra loja</a>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <ul class="mais-links">
+            <li><a href="https://www.instagram.com/gvstapparel/" target="_blank" rel="noopener"><img class="deco" src="assets/img/videos/ig-DcLq7ycRjs2.webp" width="360" height="640" loading="lazy" alt=""><span class="ml__t">GVST Apparel</span><span class="ml__d">A marca de roupas dele</span><svg class="ico ml__seta" aria-hidden="true"><use href="#i-seta"/></svg></a></li>
+            <li><a href="https://www.instagram.com/p/DeHSPbxEU1u/" target="_blank" rel="noopener"><img class="deco" src="assets/img/videos/voe-nuvy-caraiva.webp" width="640" height="640" loading="lazy" alt=""><span class="ml__t">Expedição Caraíva</span><span class="ml__d">Viaje com o Gustavo e a Voe Nuvy</span><svg class="ico ml__seta" aria-hidden="true"><use href="#i-seta"/></svg></a></li>
+            <li><a href="https://www.youtube.com/@gvstavocorrea" target="_blank" rel="noopener"><img class="deco" src="assets/img/gustavo-futevolei.webp" width="870" height="1314" loading="lazy" alt=""><span class="ml__t">Vlogs da vida no Rio</span><span class="ml__d">Treinos, praia e viagens no YouTube</span><svg class="ico ml__seta" aria-hidden="true"><use href="#i-seta"/></svg></a></li>
+            <li><a href="#contato"><img class="deco" src="assets/img/gustavo-por-do-sol.webp" width="1000" height="1333" loading="lazy" alt=""><span class="ml__t">Contato comercial</span><span class="ml__d">gustavo@agmoots.com</span><svg class="ico ml__seta" aria-hidden="true"><use href="#i-seta"/></svg></a></li>
+          </ul>
+        </div>
       </div>
     </section>
 
@@ -208,9 +301,31 @@
               <footer>Gustavo, na campanha para CeraVe</footer>
             </blockquote>
             <p>É o personagem mais famoso do Gustavo e a porta de entrada de boa parte do público: o cara da ecobag, do livro na mão, do fone com fio e do brunch com referência Pinterest. Uma sátira que todo mundo reconhece e que já levou marcas como CeraVe, Reserva Go, QuintoAndar e Jappa da Quitanda para dentro da piada.</p>
-            <ul class="elementos" aria-label="Elementos do personagem">
-              <li>Óculos de grau</li><li>Fone com fio</li><li>Headphone de enfeite</li><li>Livro na mão</li><li>Ecobag</li><li>Brunch</li>
-            </ul>
+            <div class="monte" id="monte">
+              <div class="monte__cabeca">
+                <p class="monte__t">Performômetro</p>
+                <p class="monte__sub">Monta aí o seu homem performático 👇🏾</p>
+              </div>
+              <div class="monte__itens" role="group" aria-label="Elementos do personagem">
+                <button type="button" class="item" aria-pressed="false"><span class="item__emoji" aria-hidden="true">👓</span> Óculos de grau</button>
+                <button type="button" class="item" aria-pressed="false"><span class="item__emoji" aria-hidden="true">🎧</span> Fone com fio</button>
+                <button type="button" class="item" aria-pressed="false"><span class="item__emoji" aria-hidden="true">📚</span> Livro na mão</button>
+                <button type="button" class="item" aria-pressed="false"><span class="item__emoji" aria-hidden="true">👜</span> Ecobag</button>
+                <button type="button" class="item" aria-pressed="false"><span class="item__emoji" aria-hidden="true">🥐</span> Brunch</button>
+                <button type="button" class="item" aria-pressed="false"><span class="item__emoji" aria-hidden="true">📌</span> Ref Pinterest</button>
+              </div>
+              <div class="medidor">
+                <div class="medidor__barra" id="medidor" role="meter" aria-label="Nível de performance" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" aria-valuetext="0%, apenas um cara tranquilo">
+                  <span class="medidor__fill"></span>
+                  <span class="medidor__carinha" id="nivel-emoji" aria-hidden="true">😐</span>
+                </div>
+                <div class="medidor__txt">
+                  <strong id="nivel">0%</strong>
+                  <p class="comentario" aria-live="polite"><span class="comentario__autor">Fer comentou:</span> <span id="nivel-frase">Apenas um cara tranquilo</span></p>
+                </div>
+              </div>
+              <div class="confete" id="confete" aria-hidden="true"></div>
+            </div>
             <dl class="personagem__dados">
               <div><dt>6,1 mi</dt><dd>views em 4 vídeos do personagem no TikTok</dd></div>
               <div><dt>4,1 mi</dt><dd>views na publi da CeraVe com o personagem</dd></div>
@@ -299,6 +414,7 @@
           <div>
             <p class="rotulo">Métricas</p>
             <h2 class="titulo" id="numeros-titulo">Números ao vivo</h2>
+            <p class="sticker sticker--titulo sticker--claro" aria-hidden="true">atualiza sozinho ⏱</p>
           </div>
           <p class="status" id="status" role="status" aria-live="polite">
             <span class="dot" aria-hidden="true"></span>
@@ -315,9 +431,9 @@
             </div>
             <dl class="plat__dados">
               <div><dt>Publicações</dt><dd data-metrica="instagram.publicacoes">437</dd></div>
-              <div><dt>Views em 30 dias*</dt><dd>8,3 mi</dd></div>
-              <div><dt>Contas alcançadas*</dt><dd>1,7 mi</dd></div>
-              <div><dt>Interações*</dt><dd>764 mil</dd></div>
+              <div><dt>Views em 30 dias <small class="fonte-kit">Media Kit</small></dt><dd>8,3 mi</dd></div>
+              <div><dt>Contas alcançadas <small class="fonte-kit">Media Kit</small></dt><dd>1,7 mi</dd></div>
+              <div><dt>Interações <small class="fonte-kit">Media Kit</small></dt><dd>764 mil</dd></div>
             </dl>
             <div class="plat__links">
               <a href="https://www.instagram.com/gvstavocorrea/" target="_blank" rel="noopener">@gvstavocorrea</a>
@@ -335,7 +451,7 @@
               <div><dt>Curtidas totais</dt><dd data-metrica="tiktok.curtidas">14.304.612</dd></div>
               <div><dt>Views somadas</dt><dd data-metrica="tiktok.visualizacoes">99,3 mi</dd></div>
               <div><dt>Vídeos</dt><dd data-metrica="tiktok.videos">555</dd></div>
-              <div><dt>Visitas ao perfil*</dt><dd>131 mil</dd></div>
+              <div><dt>Visitas ao perfil <small class="fonte-kit">Media Kit</small></dt><dd>131 mil</dd></div>
             </dl>
             <div class="plat__links">
               <a href="https://www.tiktok.com/@gvstavoccorrea" target="_blank" rel="noopener">@gvstavoccorrea</a>
@@ -352,8 +468,8 @@
             <dl class="plat__dados">
               <div><dt>Views do canal</dt><dd data-metrica="youtube.visualizacoes">390.381</dd></div>
               <div><dt>Vídeos</dt><dd data-metrica="youtube.videos">80</dd></div>
-              <div><dt>Horas em 28 dias*</dt><dd>611</dd></div>
-              <div><dt>Duração média*</dt><dd>8min52</dd></div>
+              <div><dt>Horas em 28 dias <small class="fonte-kit">Media Kit</small></dt><dd>611</dd></div>
+              <div><dt>Duração média <small class="fonte-kit">Media Kit</small></dt><dd>8min52</dd></div>
             </dl>
             <div class="plat__links">
               <a href="https://www.youtube.com/@gvstavocorrea" target="_blank" rel="noopener">@gvstavocorrea</a>
@@ -366,8 +482,6 @@
           <p class="rotulo"><svg class="ico" aria-hidden="true"><use href="#i-grupo"/></svg>Seguidores somados · Instagram + TikTok + YouTube</p>
           <p class="soma__num total__num" data-metrica="total.seguidores" data-odometro>277.859</p>
         </div>
-
-        <p class="nota">Contagem ao vivo a partir dos contadores públicos <a href="https://mixerno.space/instagram-user-counter/gvstavocorrea" target="_blank" rel="noopener">Mixerno.Space</a> (Instagram), <a href="https://livecounts.io/tiktok-live-follower-counter/6950765618174821381" target="_blank" rel="noopener">Livecounts.io</a> (TikTok) e <a href="https://socialcounts.org/youtube-live-subscriber-count/UCPj8ZzMbaGdAbGOu11yjKqQ" target="_blank" rel="noopener">SocialCounts</a> (YouTube), atualizada a cada 15 segundos. O YouTube arredonda o número público de inscritos. *Dados de painel interno, do Media Kit 2026. Views somadas do TikTok: soma dos vídeos públicos do perfil.</p>
       </div>
     </section>
 
@@ -378,19 +492,38 @@
           <div>
             <p class="rotulo">Publicidade</p>
             <h2 class="titulo" id="trabalhos-titulo">Publis com marcas</h2>
+            <p class="sticker sticker--titulo" aria-hidden="true">aperta o play ▶</p>
           </div>
           <p class="cabeca__apoio">Assista às campanhas aqui mesmo. Cada vídeo tem as views públicas e o link direto para a rede onde foi publicado.</p>
         </div>
 
         <!-- PUBLIS:INICIO -->
+        <div class="letreiro" aria-label="Marcas que já trabalharam com o Gustavo">
+          <ul class="letreiro__trilho">
+            <li><img class="letreiro__logo" src="assets/img/marcas/tv-globo.svg" width="160" height="37" loading="lazy" alt="TV Globo"></li>
+            <li><img class="letreiro__logo" src="assets/img/marcas/cerave.webp" width="480" height="182" loading="lazy" alt="CeraVe"></li>
+            <li><img class="letreiro__logo" src="assets/img/marcas/nubank.svg" width="160" height="88" loading="lazy" alt="Nubank"></li>
+            <li><img class="letreiro__logo letreiro__logo--icone" src="assets/img/marcas/reserva.svg" width="28" height="32" loading="lazy" alt="Reserva Go"></li>
+            <li><img class="letreiro__logo" src="assets/img/marcas/coca-cola.svg" width="160" height="52" loading="lazy" alt="Coca-Cola"></li>
+            <li><img class="letreiro__logo" src="assets/img/marcas/quinto-andar.svg" width="160" height="32" loading="lazy" alt="QuintoAndar"></li>
+            <li><img class="letreiro__logo letreiro__logo--icone" src="assets/img/marcas/639hertz.webp" width="200" height="200" loading="lazy" alt="639Hertz"></li>
+            <li><img class="letreiro__logo" src="assets/img/marcas/lev.webp" width="191" height="64" loading="lazy" alt="Lev Bicicletas"></li>
+            <li><img class="letreiro__logo letreiro__logo--icone" src="assets/img/marcas/jappa.webp" width="303" height="181" loading="lazy" alt="Jappa da Quitanda"></li>
+            <li><img class="letreiro__logo" src="assets/img/marcas/voe-nuvy.webp" width="480" height="115" loading="lazy" alt="Voe Nuvy"></li>
+            <li><img class="letreiro__logo" src="assets/img/marcas/bagaggio.webp" width="480" height="69" loading="lazy" alt="Bagaggio"></li>
+            <li><img class="letreiro__logo letreiro__logo--icone" src="assets/img/marcas/zerezes.webp" width="247" height="200" loading="lazy" alt="Zerezes"></li>
+            <li><img class="letreiro__logo letreiro__logo--icone" src="assets/img/marcas/tuyo.webp" width="200" height="200" loading="lazy" alt="Tuyo"></li>
+            <li><img class="letreiro__logo letreiro__logo--icone" src="assets/img/marcas/bold-snacks.webp" width="200" height="200" loading="lazy" alt="Bold Snacks"></li>
+          </ul>
+        </div>
         <ul class="marcas">
           <li class="publi-marca">
             <div class="marca__info">
               <img class="publi__logo" src="assets/img/marcas/tv-globo.svg" width="160" height="37" loading="lazy" alt="Logo TV Globo">
               <h3 class="marca__nome">TV Globo</h3>
               <p class="marca__cat">Entretenimento · Copa do Mundo 2026 e Avenida Brasil</p>
-              <p class="marca__desc">Seis reels em collab com a @tvglobo: a torcida performática na Copa do Mundo e as ruas do Rio comentando Avenida Brasil.</p>
-              <p class="marca__resumo">6 vídeos · mais de 61 mil curtidas no perfil da TV Globo</p>
+              <p class="marca__desc">Time de criadores da Copa na @tvglobo: a torcida performática nos jogos do Brasil e as ruas do Rio comentando Avenida Brasil.</p>
+              <p class="marca__resumo">13 vídeos · mais de 72 mil curtidas no perfil da TV Globo</p>
             </div>
             <ul class="marca__videos">
               <li class="video">
@@ -428,11 +561,11 @@
               </li>
               <li class="video">
                 <div class="player" data-instagram="reel/DaLR7WXRLdt">
-                  <img src="assets/img/videos/ig-DaLR7WXRLdt.webp" width="360" height="640" loading="lazy" alt="Capa do vídeo Atrás do hexa (TV Globo)">
-                  <button class="player__play" type="button" aria-label="Assistir Atrás do hexa aqui no site"><svg class="ico" aria-hidden="true"><use href="#i-play"/></svg></button>
+                  <img src="assets/img/videos/ig-DaLR7WXRLdt.webp" width="360" height="640" loading="lazy" alt="Capa do vídeo Atrás do hexa: todo jeito de torcer (TV Globo)">
+                  <button class="player__play" type="button" aria-label="Assistir Atrás do hexa: todo jeito de torcer aqui no site"><svg class="ico" aria-hidden="true"><use href="#i-play"/></svg></button>
                 </div>
                 <div class="video__info">
-                  <p class="video__t">Atrás do hexa</p>
+                  <p class="video__t">Atrás do hexa: todo jeito de torcer</p>
                   <p class="video__meta"><strong>6.341 curtidas</strong> · jun 2026</p>
                   <p class="video__links"><a class="video__link" href="https://www.instagram.com/tvglobo/reel/DaLR7WXRLdt/" target="_blank" rel="noopener">Ver no Instagram</a></p>
                 </div>
@@ -459,6 +592,83 @@
                   <p class="video__links"><a class="video__link" href="https://www.instagram.com/tvglobo/reel/Dcg_znojEUG/" target="_blank" rel="noopener">Ver no Instagram</a></p>
                 </div>
               </li>
+              <li class="video">
+                <div class="player" data-instagram="p/DZir_YxGvGX">
+                  <img src="assets/img/videos/ig-DZir_YxGvGX.webp" width="360" height="640" loading="lazy" alt="Capa do vídeo O timaço de criadores da Copa (TV Globo)">
+                  <button class="player__play" type="button" aria-label="Assistir O timaço de criadores da Copa aqui no site"><svg class="ico" aria-hidden="true"><use href="#i-play"/></svg></button>
+                </div>
+                <div class="video__info">
+                  <p class="video__t">O timaço de criadores da Copa</p>
+                  <p class="video__meta"><strong>3.022 curtidas</strong> · jun 2026</p>
+                  <p class="video__links"><a class="video__link" href="https://www.instagram.com/tvglobo/p/DZir_YxGvGX/" target="_blank" rel="noopener">Ver no Instagram</a></p>
+                </div>
+              </li>
+              <li class="video">
+                <div class="player" data-instagram="reel/DZi6yS4RyVh">
+                  <img src="assets/img/videos/ig-DZi6yS4RyVh.webp" width="360" height="640" loading="lazy" alt="Capa do vídeo Reação icônica pra todo gosto (TV Globo)">
+                  <button class="player__play" type="button" aria-label="Assistir Reação icônica pra todo gosto aqui no site"><svg class="ico" aria-hidden="true"><use href="#i-play"/></svg></button>
+                </div>
+                <div class="video__info">
+                  <p class="video__t">Reação icônica pra todo gosto</p>
+                  <p class="video__meta"><strong>2.060 curtidas</strong> · jun 2026</p>
+                  <p class="video__links"><a class="video__link" href="https://www.instagram.com/tvglobo/reel/DZi6yS4RyVh/" target="_blank" rel="noopener">Ver no Instagram</a></p>
+                </div>
+              </li>
+              <li class="video">
+                <div class="player" data-instagram="reel/DZi0hDjx6VK">
+                  <img src="assets/img/videos/ig-DZi0hDjx6VK.webp" width="360" height="640" loading="lazy" alt="Capa do vídeo Vem com o Bonde do Acredita (TV Globo)">
+                  <button class="player__play" type="button" aria-label="Assistir Vem com o Bonde do Acredita aqui no site"><svg class="ico" aria-hidden="true"><use href="#i-play"/></svg></button>
+                </div>
+                <div class="video__info">
+                  <p class="video__t">Vem com o Bonde do Acredita</p>
+                  <p class="video__meta"><strong>1.897 curtidas</strong> · jun 2026</p>
+                  <p class="video__links"><a class="video__link" href="https://www.instagram.com/tvglobo/reel/DZi0hDjx6VK/" target="_blank" rel="noopener">Ver no Instagram</a></p>
+                </div>
+              </li>
+              <li class="video">
+                <div class="player" data-instagram="reel/DZi8UigRO3h">
+                  <img src="assets/img/videos/ig-DZi8UigRO3h.webp" width="360" height="640" loading="lazy" alt="Capa do vídeo Pé frio não assiste jogo do meu lado (TV Globo)">
+                  <button class="player__play" type="button" aria-label="Assistir Pé frio não assiste jogo do meu lado aqui no site"><svg class="ico" aria-hidden="true"><use href="#i-play"/></svg></button>
+                </div>
+                <div class="video__info">
+                  <p class="video__t">Pé frio não assiste jogo do meu lado</p>
+                  <p class="video__meta"><strong>1.869 curtidas</strong> · jun 2026</p>
+                  <p class="video__links"><a class="video__link" href="https://www.instagram.com/tvglobo/reel/DZi8UigRO3h/" target="_blank" rel="noopener">Ver no Instagram</a></p>
+                </div>
+              </li>
+              <li class="video">
+                <div class="player" data-instagram="reel/DZjAgjjxSmC">
+                  <img src="assets/img/videos/ig-DZjAgjjxSmC.webp" width="360" height="640" loading="lazy" alt="Capa do vídeo Recado pro Ancelotti (TV Globo)">
+                  <button class="player__play" type="button" aria-label="Assistir Recado pro Ancelotti aqui no site"><svg class="ico" aria-hidden="true"><use href="#i-play"/></svg></button>
+                </div>
+                <div class="video__info">
+                  <p class="video__t">Recado pro Ancelotti</p>
+                  <p class="video__meta"><strong>977 curtidas</strong> · jun 2026</p>
+                  <p class="video__links"><a class="video__link" href="https://www.instagram.com/tvglobo/reel/DZjAgjjxSmC/" target="_blank" rel="noopener">Ver no Instagram</a></p>
+                </div>
+              </li>
+              <li class="video">
+                <div class="player" data-instagram="reel/DZi1UWJRGzM">
+                  <img src="assets/img/videos/ig-DZi1UWJRGzM.webp" width="360" height="640" loading="lazy" alt="Capa do vídeo O papo do primeiro tempo (TV Globo)">
+                  <button class="player__play" type="button" aria-label="Assistir O papo do primeiro tempo aqui no site"><svg class="ico" aria-hidden="true"><use href="#i-play"/></svg></button>
+                </div>
+                <div class="video__info">
+                  <p class="video__t">O papo do primeiro tempo</p>
+                  <p class="video__meta"><strong>788 curtidas</strong> · jun 2026</p>
+                  <p class="video__links"><a class="video__link" href="https://www.instagram.com/tvglobo/reel/DZi1UWJRGzM/" target="_blank" rel="noopener">Ver no Instagram</a></p>
+                </div>
+              </li>
+              <li class="video">
+                <div class="player" data-instagram="reel/DZi4vSexzd0">
+                  <img src="assets/img/videos/ig-DZi4vSexzd0.webp" width="360" height="640" loading="lazy" alt="Capa do vídeo Bahia e Rio no mesmo molho (TV Globo)">
+                  <button class="player__play" type="button" aria-label="Assistir Bahia e Rio no mesmo molho aqui no site"><svg class="ico" aria-hidden="true"><use href="#i-play"/></svg></button>
+                </div>
+                <div class="video__info">
+                  <p class="video__t">Bahia e Rio no mesmo molho</p>
+                  <p class="video__meta"><strong>729 curtidas</strong> · jun 2026</p>
+                  <p class="video__links"><a class="video__link" href="https://www.instagram.com/tvglobo/reel/DZi4vSexzd0/" target="_blank" rel="noopener">Ver no Instagram</a></p>
+                </div>
+              </li>
             </ul>
           </li>
           <li class="publi-marca">
@@ -466,8 +676,8 @@
               <img class="publi__logo" src="assets/img/marcas/cerave.webp" width="480" height="182" loading="lazy" alt="Logo CeraVe">
               <h3 class="marca__nome">CeraVe</h3>
               <p class="marca__cat">Skincare</p>
-              <p class="marca__desc">Duas campanhas com o personagem performático, publicadas no TikTok e no YouTube Shorts.</p>
-              <p class="marca__resumo">2 vídeos · 4,7 mi views no TikTok</p>
+              <p class="marca__desc">Duas campanhas com o personagem performático, no TikTok, no Instagram e no YouTube Shorts.</p>
+              <p class="marca__resumo">2 campanhas · 4,7 mi views no TikTok</p>
             </div>
             <ul class="marca__videos">
               <li class="video">
@@ -478,7 +688,7 @@
                 <div class="video__info">
                   <p class="video__t">Look de frio no RJ #BarreiraSoComCeraVe</p>
                   <p class="video__meta"><strong>4,1 mi views</strong> · ago 2026</p>
-                  <p class="video__links"><a class="video__link" href="https://www.tiktok.com/@gvstavoccorrea/video/7671401764389801234" target="_blank" rel="noopener">Ver no TikTok</a></p>
+                  <p class="video__links"><a class="video__link" href="https://www.tiktok.com/@gvstavoccorrea/video/7671401764389801234" target="_blank" rel="noopener">Ver no TikTok</a> <a class="video__link" href="https://www.instagram.com/gvstavocorrea/reel/DbwOXYCht4V/" target="_blank" rel="noopener">Ver no Instagram</a></p>
                 </div>
               </li>
               <li class="video">
@@ -489,40 +699,29 @@
                 <div class="video__info">
                   <p class="video__t">Performando com o Water Gel</p>
                   <p class="video__meta"><strong>622 mil views</strong> · ago 2026</p>
-                  <p class="video__links"><a class="video__link" href="https://www.tiktok.com/@gvstavoccorrea/video/7673634857402027271" target="_blank" rel="noopener">Ver no TikTok</a></p>
+                  <p class="video__links"><a class="video__link" href="https://www.tiktok.com/@gvstavoccorrea/video/7673634857402027271" target="_blank" rel="noopener">Ver no TikTok</a> <a class="video__link" href="https://www.instagram.com/gvstavocorrea/reel/Db_tSxuhGTn/" target="_blank" rel="noopener">Ver no Instagram</a></p>
                 </div>
               </li>
             </ul>
           </li>
           <li class="publi-marca">
             <div class="marca__info">
-              <img class="publi__logo" src="assets/img/marcas/voe-nuvy.webp" width="480" height="115" loading="lazy" alt="Logo Voe Nuvy">
-              <h3 class="marca__nome">Voe Nuvy</h3>
-              <p class="marca__cat">Viagens</p>
-              <p class="marca__desc">Parceria de viagens: o personagem no aeroporto e a Segunda Expedição para Caraíva, com vagas para a audiência.</p>
-              <p class="marca__resumo">2 publicações no Instagram</p>
+              <img class="publi__logo" src="assets/img/marcas/nubank.svg" width="160" height="88" loading="lazy" alt="Logo Nubank">
+              <h3 class="marca__nome">Nubank</h3>
+              <p class="marca__cat">Banco digital · bastidores de campanha</p>
+              <p class="marca__desc">A vida de um “quase influenciador” gravando uma campanha da Nubank, contada por ele mesmo.</p>
+              <p class="marca__resumo">Bastidores no Instagram</p>
             </div>
             <ul class="marca__videos">
               <li class="video">
-                <div class="player" data-instagram="p/DeHSPbxEU1u">
-                  <img src="assets/img/videos/voe-nuvy-caraiva.webp" width="640" height="640" loading="lazy" alt="Capa do vídeo Segunda Expedição para Caraíva (Voe Nuvy)">
-                  <button class="player__play" type="button" aria-label="Assistir Segunda Expedição para Caraíva aqui no site"><svg class="ico" aria-hidden="true"><use href="#i-play"/></svg></button>
+                <div class="player" data-instagram="reel/DaSvXUvBqxQ">
+                  <img src="assets/img/videos/ig-DaSvXUvBqxQ.webp" width="360" height="640" loading="lazy" alt="Capa do vídeo Gravando uma campanha da Nubank (Nubank)">
+                  <button class="player__play" type="button" aria-label="Assistir Gravando uma campanha da Nubank aqui no site"><svg class="ico" aria-hidden="true"><use href="#i-play"/></svg></button>
                 </div>
                 <div class="video__info">
-                  <p class="video__t">Segunda Expedição para Caraíva</p>
-                  <p class="video__meta">Instagram · out 2026</p>
-                  <p class="video__links"><a class="video__link" href="https://www.instagram.com/gvstavocorrea/p/DeHSPbxEU1u/" target="_blank" rel="noopener">Ver no Instagram</a></p>
-                </div>
-              </li>
-              <li class="video">
-                <div class="player" data-instagram="reel/DX_5KKsBfsq">
-                  <img src="assets/img/videos/ig-DX_5KKsBfsq.webp" width="360" height="640" loading="lazy" alt="Capa do vídeo Eu até tento parar de voar, Gui (Voe Nuvy)">
-                  <button class="player__play" type="button" aria-label="Assistir Eu até tento parar de voar, Gui aqui no site"><svg class="ico" aria-hidden="true"><use href="#i-play"/></svg></button>
-                </div>
-                <div class="video__info">
-                  <p class="video__t">Eu até tento parar de voar, Gui</p>
-                  <p class="video__meta">Instagram · mai 2026</p>
-                  <p class="video__links"><a class="video__link" href="https://www.instagram.com/gvstavocorrea/reel/DX_5KKsBfsq/" target="_blank" rel="noopener">Ver no Instagram</a></p>
+                  <p class="video__t">Gravando uma campanha da Nubank</p>
+                  <p class="video__meta">Instagram · jul 2026</p>
+                  <p class="video__links"><a class="video__link" href="https://www.instagram.com/gvstavocorrea/reel/DaSvXUvBqxQ/" target="_blank" rel="noopener">Ver no Instagram</a></p>
                 </div>
               </li>
             </ul>
@@ -598,8 +797,8 @@
               <img class="publi__logo publi__logo--icone" src="assets/img/marcas/639hertz.webp" width="200" height="200" loading="lazy" alt="Logo 639Hertz">
               <h3 class="marca__nome">639Hertz</h3>
               <p class="marca__cat">App de relacionamento</p>
-              <p class="marca__desc">O app que conecta pessoas pelo mapa astral, antes da aparência.</p>
-              <p class="marca__resumo">Publicidade no Instagram</p>
+              <p class="marca__desc">O app que conecta pessoas pelo mapa astral, antes da aparência. Duas campanhas.</p>
+              <p class="marca__resumo">2 publicidades no Instagram</p>
             </div>
             <ul class="marca__videos">
               <li class="video">
@@ -613,6 +812,17 @@
                   <p class="video__links"><a class="video__link" href="https://www.instagram.com/gvstavocorrea/reel/DcqzKpRRLTX/" target="_blank" rel="noopener">Ver no Instagram</a></p>
                 </div>
               </li>
+              <li class="video">
+                <div class="player" data-instagram="reel/Da5Kg0JRfA0">
+                  <img src="assets/img/videos/ig-Da5Kg0JRfA0.webp" width="360" height="640" loading="lazy" alt="Capa do vídeo Aqui não tem swipe infinito (639Hertz)">
+                  <button class="player__play" type="button" aria-label="Assistir Aqui não tem swipe infinito aqui no site"><svg class="ico" aria-hidden="true"><use href="#i-play"/></svg></button>
+                </div>
+                <div class="video__info">
+                  <p class="video__t">Aqui não tem swipe infinito</p>
+                  <p class="video__meta">Instagram · jul 2026</p>
+                  <p class="video__links"><a class="video__link" href="https://www.instagram.com/gvstavocorrea/reel/Da5Kg0JRfA0/" target="_blank" rel="noopener">Ver no Instagram</a></p>
+                </div>
+              </li>
             </ul>
           </li>
           <li class="publi-marca">
@@ -620,7 +830,7 @@
               <img class="publi__logo" src="assets/img/marcas/lev.webp" width="191" height="64" loading="lazy" alt="Logo Lev Bicicletas">
               <h3 class="marca__nome">Lev Bicicletas</h3>
               <p class="marca__cat">Mobilidade elétrica · cupom GVSTA</p>
-              <p class="marca__desc">Duas parcerias com a bike elétrica, incluindo o “playboy metido a cria” do Media Kit.</p>
+              <p class="marca__desc">Duas parcerias com a bike elétrica, incluindo o “playboy metido a cria” em Búzios.</p>
               <p class="marca__resumo">2 vídeos · 431 mil views no TikTok</p>
             </div>
             <ul class="marca__videos">
@@ -672,22 +882,88 @@
           </li>
           <li class="publi-marca">
             <div class="marca__info">
-              <img class="publi__logo" src="assets/img/marcas/bagaggio.webp" width="480" height="69" loading="lazy" alt="Logo Bagaggio">
-              <h3 class="marca__nome">Bagaggio</h3>
-              <p class="marca__cat">Malas e acessórios</p>
-              <p class="marca__desc">Arrumação da mochila de viagem na rotina do Gustavo.</p>
-              <p class="marca__resumo">Reel do Media Kit</p>
+              <img class="publi__logo" src="assets/img/marcas/voe-nuvy.webp" width="480" height="115" loading="lazy" alt="Logo Voe Nuvy">
+              <h3 class="marca__nome">Voe Nuvy</h3>
+              <p class="marca__cat">Viagens · Expedição Caraíva</p>
+              <p class="marca__desc">A série de viagens com a agência: duas edições da Expedição Caraíva, com Yago Viajante, e o personagem performando no Sul da Bahia.</p>
+              <p class="marca__resumo">5 publicações no Instagram</p>
             </div>
             <ul class="marca__videos">
               <li class="video">
-                <div class="player" data-instagram="">
-                  <img src="assets/img/videos/../publi-bagaggio.webp" width="483" height="871" loading="lazy" alt="Capa do vídeo Arrumando a mochila (Bagaggio)">
-                  <a class="player__play player__play--link" href="https://www.instagram.com/gvstavocorrea/" target="_blank" rel="noopener" aria-label="Ver Arrumando a mochila no Instagram"><svg class="ico" aria-hidden="true"><use href="#i-instagram"/></svg></a>
+                <div class="player" data-instagram="p/DeHSPbxEU1u">
+                  <img src="assets/img/videos/voe-nuvy-caraiva.webp" width="640" height="640" loading="lazy" alt="Capa do vídeo Segunda Expedição para Caraíva (Voe Nuvy)">
+                  <button class="player__play" type="button" aria-label="Assistir Segunda Expedição para Caraíva aqui no site"><svg class="ico" aria-hidden="true"><use href="#i-play"/></svg></button>
                 </div>
                 <div class="video__info">
-                  <p class="video__t">Arrumando a mochila</p>
-                  <p class="video__meta"><strong>160 comentários</strong> · Media Kit</p>
-                  <p class="video__links"><a class="video__link" href="https://www.instagram.com/gvstavocorrea/" target="_blank" rel="noopener">Ver no Instagram</a></p>
+                  <p class="video__t">Segunda Expedição para Caraíva</p>
+                  <p class="video__meta">Instagram · out 2026</p>
+                  <p class="video__links"><a class="video__link" href="https://www.instagram.com/gvstavocorrea/p/DeHSPbxEU1u/" target="_blank" rel="noopener">Ver no Instagram</a></p>
+                </div>
+              </li>
+              <li class="video">
+                <div class="player" data-instagram="reel/DX_5KKsBfsq">
+                  <img src="assets/img/videos/ig-DX_5KKsBfsq.webp" width="360" height="640" loading="lazy" alt="Capa do vídeo Eu até tento parar de voar, Gui (Voe Nuvy)">
+                  <button class="player__play" type="button" aria-label="Assistir Eu até tento parar de voar, Gui aqui no site"><svg class="ico" aria-hidden="true"><use href="#i-play"/></svg></button>
+                </div>
+                <div class="video__info">
+                  <p class="video__t">Eu até tento parar de voar, Gui</p>
+                  <p class="video__meta">Instagram · mai 2026</p>
+                  <p class="video__links"><a class="video__link" href="https://www.instagram.com/gvstavocorrea/reel/DX_5KKsBfsq/" target="_blank" rel="noopener">Ver no Instagram</a></p>
+                </div>
+              </li>
+              <li class="video">
+                <div class="player" data-instagram="reel/DUN39giDnuC">
+                  <img src="assets/img/videos/ig-DUN39giDnuC.webp" width="360" height="640" loading="lazy" alt="Capa do vídeo Arrumando a mala pra performar na Bahia (Voe Nuvy)">
+                  <button class="player__play" type="button" aria-label="Assistir Arrumando a mala pra performar na Bahia aqui no site"><svg class="ico" aria-hidden="true"><use href="#i-play"/></svg></button>
+                </div>
+                <div class="video__info">
+                  <p class="video__t">Arrumando a mala pra performar na Bahia</p>
+                  <p class="video__meta">Instagram · fev 2026</p>
+                  <p class="video__links"><a class="video__link" href="https://www.instagram.com/gvstavocorrea/reel/DUN39giDnuC/" target="_blank" rel="noopener">Ver no Instagram</a></p>
+                </div>
+              </li>
+              <li class="video">
+                <div class="player" data-instagram="p/DOHaPW0gYqU">
+                  <img src="assets/img/videos/ig-DOHaPW0gYqU.webp" width="360" height="640" loading="lazy" alt="Capa do vídeo Roteiro Caraíva + Arraial d’Ajuda (Voe Nuvy)">
+                  <button class="player__play" type="button" aria-label="Assistir Roteiro Caraíva + Arraial d’Ajuda aqui no site"><svg class="ico" aria-hidden="true"><use href="#i-play"/></svg></button>
+                </div>
+                <div class="video__info">
+                  <p class="video__t">Roteiro Caraíva + Arraial d’Ajuda</p>
+                  <p class="video__meta">Instagram · set 2025</p>
+                  <p class="video__links"><a class="video__link" href="https://www.instagram.com/gvstavocorrea/p/DOHaPW0gYqU/" target="_blank" rel="noopener">Ver no Instagram</a></p>
+                </div>
+              </li>
+              <li class="video">
+                <div class="player" data-instagram="reel/DOD8VABDUY1">
+                  <img src="assets/img/videos/ig-DOD8VABDUY1.webp" width="360" height="640" loading="lazy" alt="Capa do vídeo Acabou o suspense: vem pra expedição (Voe Nuvy)">
+                  <button class="player__play" type="button" aria-label="Assistir Acabou o suspense: vem pra expedição aqui no site"><svg class="ico" aria-hidden="true"><use href="#i-play"/></svg></button>
+                </div>
+                <div class="video__info">
+                  <p class="video__t">Acabou o suspense: vem pra expedição</p>
+                  <p class="video__meta"><strong>604 curtidas</strong> · set 2025</p>
+                  <p class="video__links"><a class="video__link" href="https://www.instagram.com/gvstavocorrea/reel/DOD8VABDUY1/" target="_blank" rel="noopener">Ver no Instagram</a></p>
+                </div>
+              </li>
+            </ul>
+          </li>
+          <li class="publi-marca">
+            <div class="marca__info">
+              <img class="publi__logo" src="assets/img/marcas/bagaggio.webp" width="480" height="69" loading="lazy" alt="Logo Bagaggio">
+              <h3 class="marca__nome">Bagaggio</h3>
+              <p class="marca__cat">Malas e acessórios</p>
+              <p class="marca__desc">A mochila que encarou um mochilão pela Europa, Fer.</p>
+              <p class="marca__resumo">Publicidade no Instagram</p>
+            </div>
+            <ul class="marca__videos">
+              <li class="video">
+                <div class="player" data-instagram="reel/DV8ergqDaDa">
+                  <img src="assets/img/videos/ig-DV8ergqDaDa.webp" width="360" height="640" loading="lazy" alt="Capa do vídeo Mochilão na Europa com a Bagaggio (Bagaggio)">
+                  <button class="player__play" type="button" aria-label="Assistir Mochilão na Europa com a Bagaggio aqui no site"><svg class="ico" aria-hidden="true"><use href="#i-play"/></svg></button>
+                </div>
+                <div class="video__info">
+                  <p class="video__t">Mochilão na Europa com a Bagaggio</p>
+                  <p class="video__meta">Instagram · mar 2026</p>
+                  <p class="video__links"><a class="video__link" href="https://www.instagram.com/gvstavocorrea/reel/DV8ergqDaDa/" target="_blank" rel="noopener">Ver no Instagram</a></p>
                 </div>
               </li>
             </ul>
@@ -697,24 +973,81 @@
               <img class="publi__logo publi__logo--icone" src="assets/img/marcas/zerezes.webp" width="247" height="200" loading="lazy" alt="Logo Zerezes">
               <h3 class="marca__nome">Zerezes</h3>
               <p class="marca__cat">Óculos · cupom EZ-GVST</p>
-              <p class="marca__desc">Visita à loja e escolha de armações.</p>
-              <p class="marca__resumo">Reel do Media Kit</p>
+              <p class="marca__desc">A galera de Sanca só usa Zerezes, Fer.</p>
+              <p class="marca__resumo">Parceria no Instagram</p>
             </div>
             <ul class="marca__videos">
               <li class="video">
-                <div class="player" data-instagram="">
-                  <img src="assets/img/videos/../publi-zerezes.webp" width="483" height="871" loading="lazy" alt="Capa do vídeo Escolhendo armações na loja (Zerezes)">
-                  <a class="player__play player__play--link" href="https://www.instagram.com/gvstavocorrea/" target="_blank" rel="noopener" aria-label="Ver Escolhendo armações na loja no Instagram"><svg class="ico" aria-hidden="true"><use href="#i-instagram"/></svg></a>
+                <div class="player" data-instagram="reel/DUnirQkDphO">
+                  <img src="assets/img/videos/ig-DUnirQkDphO.webp" width="360" height="640" loading="lazy" alt="Capa do vídeo A galera de Sanca só usa Zerezes (Zerezes)">
+                  <button class="player__play" type="button" aria-label="Assistir A galera de Sanca só usa Zerezes aqui no site"><svg class="ico" aria-hidden="true"><use href="#i-play"/></svg></button>
                 </div>
                 <div class="video__info">
-                  <p class="video__t">Escolhendo armações na loja</p>
-                  <p class="video__meta"><strong>217 comentários</strong> · Media Kit</p>
-                  <p class="video__links"><a class="video__link" href="https://www.instagram.com/gvstavocorrea/" target="_blank" rel="noopener">Ver no Instagram</a></p>
+                  <p class="video__t">A galera de Sanca só usa Zerezes</p>
+                  <p class="video__meta">Instagram · fev 2026</p>
+                  <p class="video__links"><a class="video__link" href="https://www.instagram.com/gvstavocorrea/reel/DUnirQkDphO/" target="_blank" rel="noopener">Ver no Instagram</a></p>
+                </div>
+              </li>
+            </ul>
+          </li>
+          <li class="publi-marca">
+            <div class="marca__info">
+              <img class="publi__logo publi__logo--icone" src="assets/img/marcas/tuyo.webp" width="200" height="200" loading="lazy" alt="Logo Tuyo">
+              <h3 class="marca__nome">Tuyo</h3>
+              <p class="marca__cat">Garrafas · hidratação</p>
+              <p class="marca__desc">Bater a meta diária de água ficou fácil com a Tuyo na rotina.</p>
+              <p class="marca__resumo">Divulgação no Instagram</p>
+            </div>
+            <ul class="marca__videos">
+              <li class="video">
+                <div class="player" data-instagram="reel/DNVlyN3tzp4">
+                  <img src="assets/img/videos/ig-DNVlyN3tzp4.webp" width="360" height="640" loading="lazy" alt="Capa do vídeo A meta diária de água (Tuyo)">
+                  <button class="player__play" type="button" aria-label="Assistir A meta diária de água aqui no site"><svg class="ico" aria-hidden="true"><use href="#i-play"/></svg></button>
+                </div>
+                <div class="video__info">
+                  <p class="video__t">A meta diária de água</p>
+                  <p class="video__meta">Instagram · ago 2025</p>
+                  <p class="video__links"><a class="video__link" href="https://www.instagram.com/gvstavocorrea/reel/DNVlyN3tzp4/" target="_blank" rel="noopener">Ver no Instagram</a></p>
+                </div>
+              </li>
+            </ul>
+          </li>
+          <li class="publi-marca">
+            <div class="marca__info">
+              <img class="publi__logo publi__logo--icone" src="assets/img/marcas/bold-snacks.webp" width="200" height="200" loading="lazy" alt="Logo Bold Snacks">
+              <h3 class="marca__nome">Bold Snacks</h3>
+              <p class="marca__cat">Alimentação</p>
+              <p class="marca__desc">Era pra ser um dia normal, mas tudo teve Bold.</p>
+              <p class="marca__resumo">Parceria paga no Instagram</p>
+            </div>
+            <ul class="marca__videos">
+              <li class="video">
+                <div class="player" data-instagram="reel/CjGu-ewg5wN">
+                  <img src="assets/img/videos/ig-CjGu-ewg5wN.webp" width="360" height="640" loading="lazy" alt="Capa do vídeo Um dia normal com Bold (Bold Snacks)">
+                  <button class="player__play" type="button" aria-label="Assistir Um dia normal com Bold aqui no site"><svg class="ico" aria-hidden="true"><use href="#i-play"/></svg></button>
+                </div>
+                <div class="video__info">
+                  <p class="video__t">Um dia normal com Bold</p>
+                  <p class="video__meta"><strong>1.253 curtidas</strong> · set 2022</p>
+                  <p class="video__links"><a class="video__link" href="https://www.instagram.com/gvstavocorrea/reel/CjGu-ewg5wN/" target="_blank" rel="noopener">Ver no Instagram</a></p>
                 </div>
               </li>
             </ul>
           </li>
         </ul>
+        <div class="eventos">
+          <h3 class="subtitulo">Eventos e convites</h3>
+          <p class="eventos__nota">Onde ele já esteve com marcas, além das publis.</p>
+          <ul class="eventos__lista">
+            <li><a href="https://www.instagram.com/gvstavocorrea/p/Dc_sXIKFs3T/" target="_blank" rel="noopener"><img class="deco" src="assets/img/videos/ig-Dc_sXIKFs3T.webp" width="360" height="360" loading="lazy" alt=""><span class="evento__nome">Camarote Favela no Rock in Rio</span><span class="evento__desc">Dia 3 de Rock in Rio · set 2026</span></a></li>
+            <li><a href="https://www.instagram.com/gvstavocorrea/p/Dc03JGDlswp/" target="_blank" rel="noopener"><img class="deco" src="assets/img/videos/ig-Dc03JGDlswp.webp" width="360" height="360" loading="lazy" alt=""><span class="evento__nome">20 anos da Reserva</span><span class="evento__desc">Festa de aniversário da marca · set 2026</span></a></li>
+            <li><a href="https://www.instagram.com/gvstavocorrea/p/DX4lIa_Ef6v/" target="_blank" rel="noopener"><img class="deco" src="assets/img/videos/ig-DX4lIa_Ef6v.webp" width="360" height="360" loading="lazy" alt=""><span class="evento__nome">Soma Wellness</span><span class="evento__desc">Experiência em Atins · mai 2026</span></a></li>
+            <li><a href="https://www.instagram.com/gvstavocorrea/reel/DXtzEF5ATZ3/" target="_blank" rel="noopener"><img class="deco" src="assets/img/videos/ig-DXtzEF5ATZ3.webp" width="360" height="360" loading="lazy" alt=""><span class="evento__nome">The Simple Run Club</span><span class="evento__desc">Rotina bem wellness astéric · abr 2026</span></a></li>
+            <li><a href="https://www.instagram.com/gvstavocorrea/p/DTDPPVmjiat/" target="_blank" rel="noopener"><img class="deco" src="assets/img/videos/ig-DTDPPVmjiat.webp" width="360" height="360" loading="lazy" alt=""><span class="evento__nome">Hayo Praia · Réveillon Só Coisas Boas</span><span class="evento__desc">Réveillon performático · jan 2026</span></a></li>
+            <li><a href="https://www.instagram.com/gvstavocorrea/p/DKSEWUAN8MD/" target="_blank" rel="noopener"><img class="deco" src="assets/img/videos/ig-DKSEWUAN8MD.webp" width="360" height="360" loading="lazy" alt=""><span class="evento__nome">CeraVe Awards BR</span><span class="evento__desc">A convite da CeraVe · mai 2025</span></a></li>
+            <li><a href="https://www.instagram.com/gvstavocorrea/p/C0pbXofrhXw/" target="_blank" rel="noopener"><img class="deco" src="assets/img/videos/ig-C0pbXofrhXw.webp" width="360" height="360" loading="lazy" alt=""><span class="evento__nome">Casa de Criadores</span><span class="evento__desc">Desfile para a NOT EQUAL em SP · dez 2023</span></a></li>
+          </ul>
+        </div>
         <!-- PUBLIS:FIM -->
       </div>
     </section>
@@ -725,6 +1058,10 @@
         <div>
           <p class="rotulo">Quem assiste</p>
           <h2 class="titulo" id="audiencia-titulo">Audiência</h2>
+          <figure class="mapa">
+            <img src="assets/img/mapa-brasil.svg" width="2200" height="1940" loading="lazy" alt="Mapa do Brasil com o Rio de Janeiro em destaque, onde está 31% do público do Gustavo">
+            <figcaption><strong>31%</strong> do público está no <span>Rio de Janeiro</span></figcaption>
+          </figure>
         </div>
         <dl class="ficha">
           <div><dt>Faixa etária</dt><dd><strong>18 a 34 anos</strong></dd></div>
@@ -758,7 +1095,7 @@
           </div>
         </div>
 
-        <div class="galeria">
+        <div class="galeria" tabindex="0" role="region" aria-label="Fotos do Gustavo (deslize para ver mais)">
           <figure><img src="assets/img/gustavo-futevolei.webp" width="870" height="1314" loading="lazy" alt="Gustavo saltando para alcançar a bola de futevôlei na beira da praia"><figcaption>Futevôlei na praia</figcaption></figure>
           <figure><img src="assets/img/gustavo-banho-de-gelo.webp" width="1000" height="1333" loading="lazy" alt="Gustavo em uma banheira de gelo da Gelo Health durante o evento The Simple Run"><figcaption>Banho de gelo no The Simple Run</figcaption></figure>
           <figure><img src="assets/img/gustavo-parque.webp" width="724" height="1258" loading="lazy" alt="Gustavo caracterizado como o homem performático no parque, com óculos de grau, fone com fio, livro e ecobag"><figcaption>O homem performático no parque</figcaption></figure>
@@ -850,9 +1187,18 @@
           </div>
         </div>
       </div>
-      <span class="contato__gvst" aria-hidden="true">GVST</span>
+      <span class="contato__gvst" aria-hidden="true"></span>
     </section>
   </main>
+
+  <div class="performance-barra" aria-hidden="true"><span id="performance-fill"></span></div>
+  <p class="performance-selo" id="performance-selo" aria-hidden="true">Performance <b id="performance-num">0%</b></p>
+  <nav class="dock" id="dock" aria-label="Atalhos">
+    <a href="https://www.instagram.com/gvstavocorrea/" target="_blank" rel="noopener" aria-label="Instagram"><svg class="ico" aria-hidden="true"><use href="#i-instagram"/></svg></a>
+    <a href="https://www.tiktok.com/@gvstavoccorrea" target="_blank" rel="noopener" aria-label="TikTok"><svg class="ico" aria-hidden="true"><use href="#i-tiktok"/></svg></a>
+    <a href="https://www.youtube.com/@gvstavocorrea" target="_blank" rel="noopener" aria-label="YouTube"><svg class="ico" aria-hidden="true"><use href="#i-youtube"/></svg></a>
+    <a class="dock__cta" href="#contato">Enviar proposta</a>
+  </nav>
 
   <footer class="rodape">
     <div class="wrap rodape__inner">

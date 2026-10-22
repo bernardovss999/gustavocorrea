@@ -35,9 +35,11 @@ test("arquivos locais referenciados existem", async () => {
   for (const r of refs) assert.ok(await existe(r), `não encontrado: ${r}`);
 });
 
-test("toda imagem tem alt, width e height", () => {
+// Miniaturas da vitrine do topo e dos links são decorativas (o texto do link já descreve) e usam alt="" de propósito
+test("toda imagem tem alt, width e height (alt vazio só nas decorativas)", () => {
   for (const tag of html.match(/<img\b[^>]*>/g)) {
-    assert.match(tag, /\salt="[^"]+"/, tag);
+    if (/class="(tile|deco)"/.test(tag)) assert.match(tag, /\salt=""/, tag);
+    else assert.match(tag, /\salt="[^"]+"/, tag);
     assert.match(tag, /\swidth="\d+"/, tag);
     assert.match(tag, /\sheight="\d+"/, tag);
   }
@@ -92,20 +94,30 @@ test("links de publis enviados pelo cliente estão no site", () => {
     "DdlzNv7R93X", "DcySvSBRjm4", "DcqzKpRRLTX", "DcLq7ycRjs2", "DYkPt0Wxn3l", "Db51RUYB1xE"];
   for (const c of codigos) assert.ok(html.includes(`/${c}/`), `post ${c} ausente`);
   const globo = marcas.find((m) => m.includes(">TV Globo<"));
-  assert.equal((globo.match(/class="player"/g) || []).length, 6, "Globo deve ter 6 vídeos");
+  assert.equal((globo.match(/class="player"/g) || []).length, 13, "Globo deve ter os 13 vídeos da coletânea");
 });
 
 test("todo vídeo mostra métrica pública ou a rede e a data, e tem link direto", () => {
   const videos = html.split('class="video__info"').slice(1).map((v) => v.split("</li>")[0].split("</article>")[0]);
   assert.ok(videos.length >= 25, `só ${videos.length} vídeos`);
-  // Exceção conhecida: Bagaggio e Zerezes (Media Kit) ainda sem link do reel; apontam para o perfil até o cliente enviar
-  const SEM_LINK_AINDA = ["Arrumando a mochila", "Escolhendo armações na loja"];
   for (const v of videos) {
     assert.match(v, /class="video__meta"><strong>[\d.,]+ (mi |mil )?(views|curtidas|comentários)<\/strong>|class="video__meta">(Instagram|TikTok) · /);
     const titulo = (v.match(/class="video__t">([^<]+)</) || [])[1];
-    if (SEM_LINK_AINDA.includes(titulo)) continue;
     assert.match(v, /href="https:\/\/www\.(tiktok\.com\/@gvstavoccorrea\/video\/\d+|instagram\.com\/[\w.]+\/(reel|p)\/[\w-]+\/)"/, titulo);
   }
+});
+
+test("publis confirmadas da coletânea estão no site; eventos ficam fora das publis", () => {
+  const confirmadas = ["DUN39giDnuC", "DOHaPW0gYqU", "DOD8VABDUY1", "Db_tSxuhGTn", "DbwOXYCht4V", "Da5Kg0JRfA0", "DV8ergqDaDa", "DUnirQkDphO",
+    "DNVlyN3tzp4", "CjGu-ewg5wN", "DaSvXUvBqxQ", "DZir_YxGvGX", "DZi0hDjx6VK", "DZi1UWJRGzM", "DZi4vSexzd0", "DZi6yS4RyVh", "DZi8UigRO3h", "DZjAgjjxSmC"];
+  const publis = html.split('<ul class="marcas">')[1].split('<div class="eventos">')[0];
+  for (const c of confirmadas) assert.ok(publis.includes(`/${c}/`), `publi ${c} ausente`);
+  const eventos = html.split('<div class="eventos">')[1].split("</ul>")[0];
+  for (const c of ["Dc_sXIKFs3T", "Dc03JGDlswp", "DKSEWUAN8MD", "C0pbXofrhXw"]) {
+    assert.ok(eventos.includes(`/${c}/`), `evento ${c} ausente`);
+    assert.ok(!publis.includes(`/${c}/`), `menção ${c} não pode aparecer como publi`);
+  }
+  assert.ok(!html.includes("publi-bagaggio.webp") && !html.includes("publi-zerezes.webp"), "prints do Media Kit foram trocados pelos reels reais");
 });
 
 test("vídeo de destaque do personagem é o reel enviado pelo cliente", () => {
