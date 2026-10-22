@@ -151,3 +151,27 @@ test("player abre o vídeo na íntegra dentro do card no celular", async () => {
   assert.ok(box && box.width > 120 && box.height > 200, `iframe ${JSON.stringify(box)}`);
   await page.close();
 });
+
+test("menu do celular: opções entram animadas, uma depois da outra, e terminam visíveis", async () => {
+  const page = await abrir(390, 844, { reducedMotion: "no-preference" });
+  await page.locator("#menu-btn").click();
+  const r = await page.$$eval("#nav a", (as) => as.map((a) => { const s = getComputedStyle(a); return { nome: s.animationName, atraso: parseFloat(s.animationDelay) }; }));
+  assert.equal(await page.$eval("#nav", (n) => getComputedStyle(n).animationName), "menu-painel");
+  assert.ok(r.every((o) => o.nome === "menu-opcao"), JSON.stringify(r));
+  assert.ok(r.every((o, i) => i === 0 || o.atraso > r[i - 1].atraso), "cada opção entra depois da anterior");
+  await page.waitForTimeout(900);
+  const fim = await page.$$eval("#nav a", (as) => as.map((a) => { const s = getComputedStyle(a); return s.opacity + " " + s.transform; }));
+  assert.ok(fim.every((f) => f === "1 none"), JSON.stringify(fim));
+  await page.close();
+});
+
+test("menu: sem animação no desktop e com 'reduzir movimento'", async () => {
+  const desk = await browser.newPage({ viewport: { width: 1280, height: 800 } });
+  await desk.goto(servidor.url);
+  assert.deepEqual([...new Set(await desk.$$eval("#nav, #nav a", (els) => els.map((e) => getComputedStyle(e).animationName)))], ["none"]);
+  await desk.close();
+  const page = await abrir(390, 844);
+  await page.locator("#menu-btn").click();
+  assert.deepEqual([...new Set(await page.$$eval("#nav, #nav a", (els) => els.map((e) => getComputedStyle(e).animationName)))], ["none"]);
+  await page.close();
+});

@@ -41,5 +41,6 @@ Site estático (HTML/CSS/JS puro) + uma rota `/api/seguidores` para o contador a
 
 ## Mobile (camada final)
 - `assets/css/mobile.css` carrega depois do `style.css`: refinamento ≤ 640px, barra fixa (`#dock`) e a barra/selo de "nível de performance" (desktop + mobile).
+- Menu do celular (≤ 960px, onde existe o botão de menu): o painel desce e as opções entram uma a uma (`menu-painel`/`menu-opcao` no fim do `mobile.css`); desktop sem animação e "reduzir movimento" desliga.
 - Testes em `tests/mobile.test.js` (320/360/390/430px: sem vazamento lateral, toque ≥ 44px, texto ≥ 11px, carrosséis, barra fixa, autoplay do fundo, player).
 - `npm test` roda com `--test-concurrency=2` para não estourar tempo em máquinas lentas.
