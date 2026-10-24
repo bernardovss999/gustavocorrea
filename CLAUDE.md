@@ -42,5 +42,6 @@ Site estático (HTML/CSS/JS puro) + uma rota `/api/seguidores` para o contador a
 ## Mobile (camada final)
 - `assets/css/mobile.css` carrega depois do `style.css`: refinamento ≤ 640px, barra fixa (`#dock`) e a barra/selo de "nível de performance" (desktop + mobile).
 - Menu do celular (≤ 960px, onde existe o botão de menu): o painel desce e as opções entram uma a uma (`menu-painel`/`menu-opcao` no fim do `mobile.css`); desktop sem animação e "reduzir movimento" desliga.
+- Topo proporcional (fim do `mobile.css`): nome, "O homem performático" + subtítulo, foto, números e marcas cabem na primeira tela; tamanhos escalam com `svh`. No celular/tablet (≤ 960px) o nome fica em cima e texto à esquerda + foto à direita. Regressão: `tests/regression/marcas-fora-da-primeira-tela.test.js`.
 - Testes em `tests/mobile.test.js` (320/360/390/430px: sem vazamento lateral, toque ≥ 44px, texto ≥ 11px, carrosséis, barra fixa, autoplay do fundo, player).
 - `npm test` roda com `--test-concurrency=2` para não estourar tempo em máquinas lentas.
