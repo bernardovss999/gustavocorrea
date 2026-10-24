@@ -24,7 +24,7 @@ Site estático (HTML/CSS/JS puro) + uma rota `/api/seguidores` para o contador a
 
 ## Vídeos e publis
 - Player (`.player[data-tiktok]` ou `[data-instagram]`) mostra a capa e só carrega o embed (TikTok player v1 / Instagram embed) no clique.
-- Capas em `assets/img/videos/<id>.webp`; logos das marcas em `assets/img/marcas/` (exibidas em escala de cinza).
+- Capas em `assets/img/videos/<id>.webp`; logos das marcas em `assets/img/marcas/` (em escala de cinza nas publis; COLORIDOS na faixa "Marcas que já colaboramos", pedido do cliente).
 - Publis são GERADAS: editar a lista `MARCAS` em `scripts/gerar-publis.py` e rodar `python scripts/gerar-publis.py` (reescreve o trecho entre `<!-- PUBLIS:INICIO -->` e `<!-- PUBLIS:FIM -->`). Não editar esse trecho à mão.
 - Capas do Instagram: `assets/img/videos/ig-<codigo>.webp`. O Gustavo oculta curtidas no Instagram; quando o mesmo vídeo está no TikTok, a métrica usada é a view do TikTok (conferido pela capa e data).
 - Bagaggio e Zerezes ainda sem link do reel (usam o print do Media Kit e o perfil). Quando o cliente mandar, trocar para `"ig"` na lista e remover a exceção `SEM_LINK_AINDA` do teste.
@@ -43,5 +43,6 @@ Site estático (HTML/CSS/JS puro) + uma rota `/api/seguidores` para o contador a
 - `assets/css/mobile.css` carrega depois do `style.css`: refinamento ≤ 640px, barra fixa (`#dock`) e a barra/selo de "nível de performance" (desktop + mobile).
 - Menu do celular (≤ 960px, onde existe o botão de menu): o painel desce e as opções entram uma a uma (`menu-painel`/`menu-opcao` no fim do `mobile.css`); desktop sem animação e "reduzir movimento" desliga.
 - Topo proporcional (fim do `mobile.css`): nome, "O homem performático" + subtítulo, foto, números e marcas cabem na primeira tela; tamanhos escalam com `svh`. No celular/tablet (≤ 960px) o nome fica em cima e texto à esquerda + foto à direita. Regressão: `tests/regression/marcas-fora-da-primeira-tela.test.js`.
+- Vídeos do fundo (`.vitrine`) ficam direto no `.hero` e cobrem o topo inteiro (desktop e celular), desfocados (`blur`) e com véu claro; faixa de seguidores compacta. Regressão: `tests/regression/videos-so-atras-da-foto.test.js`.
 - Testes em `tests/mobile.test.js` (320/360/390/430px: sem vazamento lateral, toque ≥ 44px, texto ≥ 11px, carrosséis, barra fixa, autoplay do fundo, player).
 - `npm test` roda com `--test-concurrency=2` para não estourar tempo em máquinas lentas.
