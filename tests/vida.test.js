@@ -1,4 +1,4 @@
-// Topo animado, jogo do personagem, ticker, letreiro de logos e respeito a "reduzir movimento".
+// Topo animado, jogo do personagem, letreiro de marcas e respeito a "reduzir movimento".
 import { test, before, after } from "node:test";
 import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
@@ -55,23 +55,21 @@ test("com 'reduzir movimento' nada se mexe e os vídeos do fundo não tocam", as
   await page.waitForTimeout(800);
   const r = await page.evaluate(() => ({
     tocando: [...document.querySelectorAll(".vitrine video")].filter((v) => !v.paused).length,
-    ticker: getComputedStyle(document.querySelector(".ticker__trilho")).animationName,
     letreiro: getComputedStyle(document.querySelector(".letreiro__trilho")).animationName,
     sticker: getComputedStyle(document.querySelector(".sticker--pov")).animationName
   }));
   assert.equal(r.tocando, 0);
-  assert.deepEqual([r.ticker, r.letreiro, r.sticker], ["none", "none", "none"]);
+  assert.deepEqual([r.letreiro, r.sticker], ["none", "none"]);
   await page.close();
 });
 
-test("ticker e letreiro têm o conteúdo duplicado para o loop não dar salto", async () => {
+test("letreiro de marcas tem o conteúdo duplicado para o loop não dar salto", async () => {
   const page = await browser.newPage({ viewport: { width: 1440, height: 900 } });
   await page.goto(servidor.url);
   const r = await page.evaluate(() => {
     const conta = (sel) => { const t = document.querySelector(sel); return { total: t.children.length, clones: t.querySelectorAll(":scope > [data-clone]").length }; };
-    return { ticker: conta(".ticker__trilho"), letreiro: conta(".letreiro__trilho"), marcas: document.querySelectorAll(".publi-marca").length };
+    return { letreiro: conta(".letreiro__trilho"), marcas: document.querySelectorAll(".publi-marca").length };
   });
-  assert.equal(r.ticker.clones * 2, r.ticker.total);
   assert.equal(r.letreiro.clones * 2, r.letreiro.total);
   assert.equal(r.letreiro.clones, r.marcas, "toda marca das publis aparece no letreiro");
   await page.close();

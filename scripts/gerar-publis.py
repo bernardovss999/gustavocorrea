@@ -214,8 +214,13 @@ def letreiro():
         arq, w, h = m["logo"]
         classe = "letreiro__logo letreiro__logo--icone" if m.get("icone") else "letreiro__logo"
         itens.append(f'<li><img class="{classe}" src="assets/img/marcas/{arq}" width="{w}" height="{h}" loading="lazy" alt="{e(m["nome"])}"></li>')
-    return ('        <div class="letreiro" aria-label="Marcas que já trabalharam com o Gustavo">\n'
-            '          <ul class="letreiro__trilho">\n            ' + "\n            ".join(itens) + "\n          </ul>\n        </div>\n")
+    return ('<section class="marcas-topo" aria-labelledby="marcas-topo-titulo">\n'
+            '        <div class="wrap marcas-topo__cabeca">\n'
+            '          <h2 class="marcas-topo__titulo" id="marcas-topo-titulo">Marcas que já colaboramos</h2>\n'
+            '          <a class="marcas-topo__ver" href="#trabalhos">Ver as publis</a>\n'
+            '        </div>\n'
+            '        <div class="letreiro" aria-label="Logos das marcas">\n'
+            '          <ul class="letreiro__trilho">\n            ' + "\n            ".join(itens) + "\n          </ul>\n        </div>\n      </section>")
 
 
 def eventos():
@@ -231,11 +236,14 @@ def eventos():
 def main():
     p = RAIZ / "index.html"
     s = p.read_text(encoding="utf-8")
-    bloco = ("<!-- PUBLIS:INICIO -->\n" + letreiro() + "        <ul class=\"marcas\">\n" + "\n".join(marca(m) for m in MARCAS)
+    bloco = ("<!-- PUBLIS:INICIO -->\n" + "        <ul class=\"marcas\">\n" + "\n".join(marca(m) for m in MARCAS)
              + "\n        </ul>\n" + eventos() + "        <!-- PUBLIS:FIM -->")
     novo, n = re.subn(r"<!-- PUBLIS:INICIO -->.*?<!-- PUBLIS:FIM -->", lambda _: bloco, s, flags=re.S)
     if n != 1:
         raise SystemExit("marcadores PUBLIS não encontrados")
+    novo, n2 = re.subn(r"<!-- MARCAS:INICIO -->.*?<!-- MARCAS:FIM -->", lambda _: "<!-- MARCAS:INICIO -->\n      " + letreiro() + "\n      <!-- MARCAS:FIM -->", novo, flags=re.S)
+    if n2 != 1:
+        raise SystemExit("marcadores MARCAS não encontrados")
     p.write_text(novo, encoding="utf-8")
     print(f"{len(MARCAS)} marcas, {sum(len(m['videos']) for m in MARCAS)} vídeos, {len(EVENTOS)} eventos")
 

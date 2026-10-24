@@ -164,7 +164,7 @@ test("formatação dos números em pt-BR", async () => {
   assert.equal(formatar({ valor: 159054, aprox: false }), "159.054");
   assert.equal(formatar({ valor: 112000, aprox: true }), "112 mil");
   assert.equal(formatar({ valor: 99300000, aprox: true }), "99,3 mi");
-  assert.equal(formatar(undefined), "—");
+  assert.equal(formatar(undefined), "...", "sem travessão: o cliente pediu nenhum — no site");
   const t = totalSeguidores({ instagram: { seguidores: { valor: 1000, aprox: true } }, tiktok: { seguidores: { valor: 2, aprox: false } }, youtube: { inscritos: { valor: 3, aprox: false } } });
   assert.deepEqual({ ...t }, { valor: 1005, aprox: true });
 });
