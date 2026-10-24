@@ -306,7 +306,7 @@
 .hero { position: relative; isolation: isolate; }
 .hero .vitrine {
   inset: 0; z-index: -2; gap: 12px;
-  opacity: .5; filter: grayscale(.25) blur(7px);
+  opacity: .5; filter: grayscale(.25) blur(4px);
   -webkit-mask-image: linear-gradient(to bottom, transparent, #000 10%);
   mask-image: linear-gradient(to bottom, transparent, #000 10%);
 }
